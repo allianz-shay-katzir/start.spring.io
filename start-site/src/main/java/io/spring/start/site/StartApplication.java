@@ -16,16 +16,14 @@
 
 package io.spring.start.site;
 
-import java.io.IOException;
-import java.nio.file.Files;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.spring.initializr.versionresolver.DependencyManagementVersionResolver;
 import io.spring.initializr.web.support.SaganInitializrMetadataUpdateStrategy;
 import io.spring.start.site.project.ProjectDescriptionCustomizerConfiguration;
 import io.spring.start.site.support.CacheableDependencyManagementVersionResolver;
 import io.spring.start.site.web.HomeController;
-
+import java.io.IOException;
+import java.nio.file.Files;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -45,7 +43,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
  */
 @EnableAutoConfiguration
 @SpringBootConfiguration
-@Import(ProjectDescriptionCustomizerConfiguration.class)
+@Import({ ProjectDescriptionCustomizerConfiguration.class, CustomInitializrConfiguration.class,
+		MyProjectGenerator.class })
 @EnableCaching
 @EnableAsync
 public class StartApplication {

@@ -1,0 +1,23 @@
+custom:
+  initializr:
+    dependencies:
+      - name: Custom Dependencies
+        content:
+          - name: My mo vehicle
+            id: my-mo-vehicle
+            groupId: example.my
+            artifactId: my-mo-vehicle
+            starter: false
+            description: my mo vehicle
+          - name: my mo API
+            id: my-mo-api
+            groupId: example.my
+            artifactId: my-mo-api
+            starter: false
+            description: my mo api
+          - name: my bff starter
+            id: my-bff-spring-boot-starter
+            groupId: example.my
+            artifactId: my-bff-spring-boot-starter
+            starter: true
+            description: my bff starter
